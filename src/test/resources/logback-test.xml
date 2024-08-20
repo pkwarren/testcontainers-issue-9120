@@ -1,0 +1,25 @@
+<configuration>
+    <shutdownHook/>
+
+    <appender name="KAFKA" class="ch.qos.logback.core.FileAppender">
+        <file>target/logs/kafka.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="kafka" level="INFO" additivity="false">
+        <appender-ref ref="KAFKA"/>
+    </logger>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) %logger{36} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
