@@ -4,10 +4,10 @@
 
 Repo which illustrates the deadlock as described in [Issue #9120](https://github.com/testcontainers/testcontainers-java/issues/9120).
 
-To repro, run `./mvnw clean verify` and the test process will hit a deadlock.
-Here's an example snipped from running `jstack` against the deadlocked process:
+To reproduce the problem, run `./mvnw clean verify` and the test process will hit a deadlock.
+Here's an example snippet from running `jstack` against the deadlocked process:
 
-```plaintext
+```text
 Found one Java-level deadlock:
 =============================
 "ForkJoinPool-1-worker-1":
