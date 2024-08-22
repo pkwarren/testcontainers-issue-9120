@@ -16,6 +16,7 @@ import java.io.File;
 public class ComposeTest {
     @Container
     public static ComposeContainer COMPOSE_CONTAINER = new ComposeContainer(new File("docker-compose.yml"))
+            .withLocalCompose(true)
             .waitingFor("kafka", Wait.forLogMessage(".*Transitioning from RECOVERY to RUNNING.*", 1));
 
     @Test
